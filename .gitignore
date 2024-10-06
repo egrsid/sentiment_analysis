@@ -1,0 +1,4 @@
+text_recognition/fitted_models/
+text_recognition/vectorizers/
+text_recognition/reports/
+text_recognition/full_dataset_emotions_text.csv
