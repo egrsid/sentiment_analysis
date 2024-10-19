@@ -1,31 +1,65 @@
-# Проект по распознаванию эмоций в текстовых сообщениях
+# Sentiment Analysis Project
 
-## Описание проекта
+This project is focused on building and training models for binary sentiment classification based on text messages. The main objective is to develop an optimal model capable of accurately recognizing emotions in text.
 
-Данный проект направлен на создание и обучение моделей для бинарной классификации эмоций человека по текстовым сообщениям. Основная цель работы — разработка оптимальной модели, способной точно распознавать эмоции на основе текста. 
+## Relevance
 
-### Актуальность
+Emotion recognition in text is becoming an increasingly important task in today's world, especially with the growing use of chatbots and virtual assistants. For instance, banking chatbots, despite their widespread use, often struggle to understand the emotional state of a client. This results in unsatisfactory responses, reduced customer service quality, and ultimately, client attrition.
 
-Распознавание эмоций человека по тексту становится все более важной задачей в современном мире, особенно в связи с ростом использования чат-ботов и виртуальных помощников. В частности, банковские чат-боты, несмотря на их широкое применение, на данный момент зачастую плохо справляются с задачей понимания эмоционального состояния клиента. Это приводит к неудовлетворительным ответам, снижению уровня клиентского сервиса и, как следствие, оттоку клиентов. 
+The primary goal of this project is to create a model that could be integrated into such chatbots, allowing them to interact more effectively by recognizing customer emotions and responding accordingly.
 
-Основное направление разработки данного проекта сосредоточено на создании модели, которая могла бы быть интегрирована в подобные чат-боты, что позволило бы им более эффективно взаимодействовать с клиентами, распознавая их эмоции и реагируя на них адекватно.
+## Workflow
 
-В ходе работы были предприняты следующие шаги:
+The following steps were taken during the development of this project:
 
-- Поиск и анализ датасетов с достаточной информативностью и необходимыми параметрами (распределение длин текстов и лейблов).
-- Выделение лучшего датасета среди найденных и подготовка его к работе.
-- Предобработка данных: очистка от ненужных символов, тестирование гипотез по стеммингу и лемматизации.
-- Обучение нескольких моделей для сравнения их производительности и нахождения лучшего варианта.
-- Оптимизация гиперпараметров для выделенных лучших моделей.
-- Определение лучшей модели среди топ-3 после оптимизации.
-- Тестирование финальной модели на независимых примерах.
+- Searching and analyzing datasets with sufficient information and necessary parameters (e.g., text length distribution and labels).
+- Selecting the best dataset among the analyzed ones and preparing it for use.
+- Data preprocessing: cleaning unnecessary symbols, testing hypotheses on stemming and lemmatization.
+- Training multiple models to compare their performance and find the best one.
+- Hyperparameter optimization for the best models.
+- Selecting the top-3 models and determining the best one after optimization.
+- Testing the final model on independent examples.
 
-В результате была достигнута главная цель работы — создание модели, которая показывает высокую точность в задаче бинарной классификации эмоций по тексту.
+As a result, the main goal of the project was achieved — the creation of a model that shows high accuracy in binary sentiment classification of text.
 
-## Используемые библиотеки
+## Project Structure
 
-Проект был реализован с использованием следующих библиотек:
+The folder `text_recognition` contains the following key files:
+1. **model_parameters.pickle** – Parameters of the models optimized through Optuna.
+2. **result_model_pipeline.pickle** – The final sentiment classification model, which is the product of this project.
+3. **text_recognition_code** – The code used for research and model development.
+4. **test_model.py** – A script for testing the final model through the command line.
 
+## Installation Instructions
+
+To clone and use this project locally, follow these steps:
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/egrsid/sentiment_analysis.git
+```
+
+### 2. Navigate to the `text_recognition` folder
+```bash
+cd sentiment_analysis/text_recognition
+```
+
+### 3. Install the required dependencies
+```bash
+pip install -r requirements.txt
+```
+
+
+## Testing the Model
+Once the environment is set up, you can test the model using the test_model.py script. The testing is done via the command line, using the following format:
+
+```bash
+!python test_model.py --text 'your text'
+```
+Replace 'your text' with the text message you want to classify
+
+## Libraries Used
+The project was implemented using the following libraries:
 - [scikit-learn](https://scikit-learn.org/)
 - [Optuna](https://optuna.org/)
 - [matplotlib](https://matplotlib.org/)
@@ -39,4 +73,4 @@
 - [string (String Operations)](https://docs.python.org/3/library/string.html)
 - [nltk (Natural Language Toolkit)](https://www.nltk.org/)
 - [CatBoost](https://catboost.ai/)
-- Кастомная библиотека [ml_tools](https://github.com/egrsid/ml_tools)
+- Custom framework [ml_tools](https://github.com/egrsid/ml_tools)
