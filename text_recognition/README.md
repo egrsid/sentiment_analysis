@@ -54,7 +54,7 @@ pip install -r requirements.txt
 Once the environment is set up, you can test the model using the test_model.py script. The testing is done via the command line, using the following format:
 
 ```bash
-!python test_model.py --text 'your text'
+python test_model.py --text 'your text'
 ```
 Replace 'your text' with the text message you want to classify
 
